@@ -5,6 +5,12 @@ VisualStudioVersion = 16.0.33027.164
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventTool.Web", "InventTool.Web\InventTool.Web.csproj", "{DB75BE4C-1019-4218-95BF-1B0F4D376665}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "InventTool.WebAdmin", "InventTool.WebAdmin\InventTool.WebAdmin.vbproj", "{63FBB4A6-75EF-4276-ADCA-3D1213CF3877}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventTooling.Win", "InventTooling.Win\InventTooling.Win.csproj", "{318A7B5E-6202-4039-B767-468C69009337}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventTool.BL", "InventTool.BL\InventTool.BL.csproj", "{C63D197F-3A31-476E-9477-B95F4971FBC0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +21,18 @@ Global
 		{DB75BE4C-1019-4218-95BF-1B0F4D376665}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DB75BE4C-1019-4218-95BF-1B0F4D376665}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DB75BE4C-1019-4218-95BF-1B0F4D376665}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63FBB4A6-75EF-4276-ADCA-3D1213CF3877}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63FBB4A6-75EF-4276-ADCA-3D1213CF3877}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63FBB4A6-75EF-4276-ADCA-3D1213CF3877}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63FBB4A6-75EF-4276-ADCA-3D1213CF3877}.Release|Any CPU.Build.0 = Release|Any CPU
+		{318A7B5E-6202-4039-B767-468C69009337}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{318A7B5E-6202-4039-B767-468C69009337}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{318A7B5E-6202-4039-B767-468C69009337}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{318A7B5E-6202-4039-B767-468C69009337}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C63D197F-3A31-476E-9477-B95F4971FBC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C63D197F-3A31-476E-9477-B95F4971FBC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C63D197F-3A31-476E-9477-B95F4971FBC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C63D197F-3A31-476E-9477-B95F4971FBC0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
