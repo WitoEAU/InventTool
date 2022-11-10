@@ -1,7 +1,12 @@
-﻿
+﻿@model List<InventTool.Web.Models.HerramentalModel>
 @{
     ViewBag.Title = "Index";
 }
 
 <h2>Bienvenidos a Inventario Tooling</h2>
 
+
+@foreach (var herramental in Model) { 
+<p>@herramental.Id @herramental.Descripcion</p>
+
+}
