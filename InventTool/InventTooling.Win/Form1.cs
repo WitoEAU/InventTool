@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InventTool.BL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +20,14 @@ namespace InventTooling.Win
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Bienvenido a IHT");
+            var herramentalBL = new HerramentalBL();
+            var listadeHerramental = herramentalBL.ObtenerHerramental();
+
+            foreach (var herramental in listadeHerramental)
+            {
+                MessageBox.Show(herramental.Descripcion);
+            }
+
         }
     }
 }

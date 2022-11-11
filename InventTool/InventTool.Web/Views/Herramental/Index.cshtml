@@ -1,6 +1,22 @@
-﻿
+﻿@model List<InventTool.BL.Herramental>
 @{
     ViewBag.Title = "Index";
 }
 
 <h2>Herramental Tooling</h2>
+
+
+<table class="table table-bordered table-hover">
+    @foreach (var herramental in Model)
+    {
+        <tr>
+            <td>@herramental.Id</td>
+            <td>@herramental.Descripcion</td>
+            <td>@herramental.Medida</td>
+            <td>@herramental.Serie</td>
+        </tr>
+
+    }
+
+
+</table>

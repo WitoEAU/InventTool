@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace InventTool.BL
 {
@@ -12,6 +14,6 @@ namespace InventTool.BL
         public int Existencia { get; set; }
         public double Medida { get; set; }
         public string Serie { get; set; }
-
+        public string  Modelo { get; set; }
     }
 }

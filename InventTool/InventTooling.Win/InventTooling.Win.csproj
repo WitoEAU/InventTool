@@ -79,5 +79,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\InventTool.BL\InventTool.BL.csproj">
+      <Project>{88caf7e1-c07c-4854-a4d9-0379d15cdc41}</Project>
+      <Name>InventTool.BL</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

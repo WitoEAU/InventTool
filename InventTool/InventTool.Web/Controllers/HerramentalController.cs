@@ -1,4 +1,4 @@
-﻿using InventTool.Web.Models;
+﻿using InventTool.BL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,9 +12,10 @@ namespace InventTool.Web.Controllers
         // GET: Herramental
         public ActionResult Index()
         {
-            
+            var herramentalBL = new HerramentalBL();
+            var listadeHerramental = herramentalBL.ObtenerHerramental();
 
-            return View();
+            return View(listadeHerramental);
         }
     }
 }
