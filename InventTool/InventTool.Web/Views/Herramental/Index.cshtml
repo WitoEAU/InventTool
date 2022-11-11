@@ -6,11 +6,29 @@
 <h2>Herramental Tooling</h2>
 
 
-<table class="table table-bordered table-hover">
+<table class="table">
+    <thead>
+        <tr>
+            <th class=" Th1">
+                Codigo
+            </th>
+            <th class=" Th1">
+                Descripción
+            </th>
+            <th class=" Th1">
+                Media
+            </th>
+            <th class=" Th1">
+                Serie
+            </th>
+        </tr>
+    </thead>
+
+
     @foreach (var herramental in Model)
     {
         <tr>
-            <td>@herramental.Id</td>
+            <td class="Td1">@herramental.Id</td>
             <td>@herramental.Descripcion</td>
             <td>@herramental.Medida</td>
             <td>@herramental.Serie</td>

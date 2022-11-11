@@ -1,0 +1,38 @@
+﻿body {
+
+    
+
+}
+
+
+.table, td, th {
+    background: rgb(226 221 221);
+    color: black;
+    border: 2px solid;
+    border-color: rgb(38 37 37);
+    width: 25%;
+    height: 20%;
+    text-align: center;
+    border-collapse: collapse;
+    padding: 2%;
+    margin: 0%;
+    
+}
+
+.Td1 {
+    width: 10%;
+    height: 10%;
+    
+}
+
+.navbar{
+
+    background: rgb(0,0,0);
+    background-repeat: repeat-y;
+    display: flow;
+}
+
+.Th1 {
+    background: rgb(120 120 120);
+    color: aliceblue;
+}
