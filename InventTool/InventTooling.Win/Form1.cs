@@ -16,18 +16,12 @@ namespace InventTooling.Win
         public Form1()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
             var herramentalBL = new HerramentalBL();
             var listadeHerramental = herramentalBL.ObtenerHerramental();
 
-            foreach (var herramental in listadeHerramental)
-            {
-                MessageBox.Show(herramental.Descripcion);
-            }
-
+            listadeHerramentalBindingSource.DataSource = listadeHerramental;
         }
+
+       
     }
 }

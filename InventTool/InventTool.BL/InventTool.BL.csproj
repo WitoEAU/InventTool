@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contexto.cs" />
     <Compile Include="Herramental.cs" />
     <Compile Include="HerramentalBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
