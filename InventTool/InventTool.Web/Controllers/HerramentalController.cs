@@ -10,12 +10,11 @@ namespace InventTool.Web.Controllers
     public class HerramentalController : Controller
     {
         // GET: Herramental
-        public ActionResult Index()
+      
+        public  ActionResult index()
         {
-            var herramentalBL = new HerramentalBL();
-            var listadeHerramental = herramentalBL.ObtenerHerramental();
-
-            return View(listadeHerramental);
+            return View();
         }
+
     }
 }

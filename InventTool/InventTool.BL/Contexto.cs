@@ -23,5 +23,6 @@ namespace InventTool.BL
 
 
         public DbSet<Herramental> Herramental { get; set; }
+        public DbSet<Categoria> Categorias { get; set; }
     }
 }
