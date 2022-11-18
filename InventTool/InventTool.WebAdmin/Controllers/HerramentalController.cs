@@ -32,7 +32,7 @@ namespace InventTool.WebAdmin.Controllers
             var nuevoHerramental = new Herramental();
             var categorias = _categoriasBL.ObtenerCategoria();
 
-            ViewBag.ListadeCategorias = new SelectList(categorias, "Id", "Descripcion");
+            ViewBag.CategoriaId = new SelectList(categorias, "Id", "Descripcion");
 
             return View(nuevoHerramental);
         }
@@ -41,7 +41,7 @@ namespace InventTool.WebAdmin.Controllers
         {
             if (ModelState.IsValid)
             {
-                //if(herramental.CategoriaId == 0)
+                //if (herramental.CategoriaId == 0)
                 //{
                 //    ModelState.AddModelError("CategoriaId, Seleccionar Categoria");
                 //    return View(herramental);
@@ -78,7 +78,7 @@ namespace InventTool.WebAdmin.Controllers
         {
             if (ModelState.IsValid)
             {
-                //if(herramental.CategoriaId == 0)
+                //if (herramental.CategoriaId == 0)
                 //{
                 //    ModelState.AddModelError("CategoriaId, Seleccionar Categoria");
                 //    return View(herramental);

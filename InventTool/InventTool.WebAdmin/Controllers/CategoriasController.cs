@@ -1,8 +1,4 @@
 ﻿using InventTool.BL;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace InventTool.WebAdmin.Controllers
@@ -20,9 +16,9 @@ namespace InventTool.WebAdmin.Controllers
             public ActionResult Index()
             {
                 
-                var listadeCategorias = _categoriasBL.ObtenerCategoria();
+                var ListadeCategorias = _categoriasBL.ObtenerCategoria();
 
-                return View(listadeCategorias);
+                return View(ListadeCategorias);
             }
 
             public ActionResult Crear()

@@ -16,7 +16,7 @@
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-                @Html.ActionLink("Inventario Herramental Tooling Admin", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Inventario Tooling", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -28,6 +28,9 @@
                     </li>
                     <li>
                         @Html.ActionLink("Categorias", "index", "Categorias")
+                    </li>
+                    <li>
+                        @Html.ActionLink("Usuarios Tooling", "index", "ToolUsers")
                     </li>
                 </ul>
             </div>

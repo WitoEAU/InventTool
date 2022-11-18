@@ -1,0 +1,45 @@
+﻿@model IEnumerable<InventTool.BL.ToolUsers>
+
+@{
+    ViewBag.Title = "ToolUsers";
+}
+
+<h2>Usuarios Tooling</h2>
+
+<p>
+    @Html.ActionLink("Nuevo Usuario", "Crear")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NombreUsuario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AreaUsuario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Activo)
+        </th>
+        
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NombreUsuario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AreaUsuario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Activo)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Editar", new { id=item.Id }) |
+            @Html.ActionLink("Detalle", "Detalle", new { id=item.Id }) |
+            @Html.ActionLink("Eliminar", "Eliminar", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

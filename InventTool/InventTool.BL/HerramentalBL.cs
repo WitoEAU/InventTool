@@ -34,7 +34,8 @@ namespace InventTool.BL
             if (herramental.Id == 0) 
             { 
                 _contexto.Herramental.Add(herramental); 
-            } else
+            }
+            else
             {
                 var herramentalExistente = _contexto.Herramental.Find(herramental.Id);
                 herramentalExistente.Descripcion = herramental.Descripcion;
