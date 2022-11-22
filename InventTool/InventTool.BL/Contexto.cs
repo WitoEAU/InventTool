@@ -10,7 +10,6 @@ namespace InventTool.BL
 {
     public class Contexto: DbContext
     {
-
         public Contexto() : base(@"Data Source=(LocalDb)\MSSQLLocalDB;AttachDBFilename=" +
              Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + @"\InventTool.DB.mdf")
         { 
@@ -25,6 +24,8 @@ namespace InventTool.BL
         public DbSet<Herramental> Herramental { get; set; }
         public DbSet<Categoria> Categorias { get; set; }
         public DbSet<ToolUsers> ToolUsers { get; set; }
+        public DbSet<Descarga> Descarga { get; set; } 
+        public DbSet<DescargaDetalle> DescargaDetalle { get; set; }
 
     }
 }

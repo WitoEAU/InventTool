@@ -35,7 +35,7 @@ namespace InventTool.BL
         public Categoria Categoria { get; set; }
 
         [Display(Name = "Imagen")]
-        public String UrlImagen { get; set; }
+        public string UrlImagen { get; set; }
         public bool Activo { get; set; }
 
     }

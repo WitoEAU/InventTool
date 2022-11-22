@@ -41,11 +41,11 @@ namespace InventTool.WebAdmin.Controllers
         {
             if (ModelState.IsValid)
             {
-                //if (herramental.CategoriaId == 0)
-                //{
-                //    ModelState.AddModelError("CategoriaId, Seleccionar Categoria");
-                //    return View(herramental);
-                //}
+                if (herramental.CategoriaId == 0)
+                {
+                    ModelState.AddModelError("CategoriaId", "Seleccionar Categoria");
+                    return View(herramental);
+                }
 
                 if (imagen != null)
                 {
@@ -78,11 +78,11 @@ namespace InventTool.WebAdmin.Controllers
         {
             if (ModelState.IsValid)
             {
-                //if (herramental.CategoriaId == 0)
-                //{
-                //    ModelState.AddModelError("CategoriaId, Seleccionar Categoria");
-                //    return View(herramental);
-                //}
+                if (herramental.CategoriaId == 0)
+                {
+                    ModelState.AddModelError("CategoriaId", "Seleccionar Categoria");
+                    return View(herramental);
+                }
 
                 if (imagen != null)
                 {

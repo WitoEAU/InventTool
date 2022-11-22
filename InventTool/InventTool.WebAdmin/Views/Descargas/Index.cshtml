@@ -1,0 +1,48 @@
+﻿@model IEnumerable<InventTool.BL.Descarga>
+
+@{
+    ViewBag.Title = "Descarga";
+}
+
+<h2>Descarga</h2>
+
+<p>
+    @Html.ActionLink("Nueva Salida", "Crear")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ToolUsers.NombreUsuario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fecha)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Activo)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ToolUsers.NombreUsuario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fecha)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Activo)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Editar", new { id = item.Id }) |
+                @Html.ActionLink("Detalle", "Detalle", new { id = item.Id }) |
+                @Html.ActionLink("Ver Herramental", "Index", "DescargasDetalles", new { id = item.Id }, null)
+            </td>
+        </tr>
+    }
+
+</table>
+
+@Html.ActionLink("Regresar a Salidas", "Index", "Home")

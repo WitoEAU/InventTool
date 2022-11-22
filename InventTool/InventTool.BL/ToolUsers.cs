@@ -16,11 +16,13 @@ namespace InventTool.BL
 
         public int Id { get; set; }
 
+        [Display(Name = "Usuario")]
         [Required(ErrorMessage = "Ingresar Nombre de Usuario")]
-        public String NombreUsuario { get; set; }
+        public string NombreUsuario { get; set; }
 
+        [Display(Name = "Area")]
         [Required(ErrorMessage = "Ingresar Area de Usuario")]
-        public String AreaUsuario { get; set; }
+        public string AreaUsuario { get; set; }
         public bool Activo { get; set; }
 
        

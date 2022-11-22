@@ -12,6 +12,6 @@ namespace InventTool.BL
         public int Id { get; set; }
 
         [Required(ErrorMessage = "Ingresar Categoria")]
-        public String Descripcion { get; set; }
+        public string Descripcion { get; set; }
     }
 }

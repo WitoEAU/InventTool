@@ -1,0 +1,55 @@
+﻿@model InventTool.BL.Descarga
+
+
+@{
+    ViewBag.Title = "Descargas Detalles";
+}
+
+<h2>Salida Herramental No: @Model.Id</h2>
+
+<p>
+    @Html.ActionLink("Nuevo Herramental", "Crear", new { id = Model.Id })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Herramental
+        </th>
+        <th>
+            Categoria
+        </th>
+        <th>
+            Medida
+        </th>
+        <th>
+            Serie
+        </th>
+        <th>
+        </th>
+
+    </tr>
+
+    @foreach (var item in Model.ListadeDescargaDetalle)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Herramental.Descripcion)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Herramental.Categoria.Descripcion)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Herramental.Medida)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Herramental.Serie)
+    </td>
+    <td>
+        @Html.ActionLink("Eliminar", "Eliminar", new { id = item.Id })
+    </td>
+</tr>
+    }
+
+</table>
+
+@Html.ActionLink("Regresar a Salidas", "Index", "Descargas")

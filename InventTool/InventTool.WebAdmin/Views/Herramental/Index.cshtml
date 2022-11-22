@@ -11,31 +11,31 @@
 </p>
 <table class="table">
     <tr>
-        <th class="Th1">
+        <th>
             @Html.DisplayNameFor(model => model.Descripcion)
         </th>
-        <th class="Th1">
+        <th>
             @Html.DisplayNameFor(model => model.Categoria)
         </th>
-        <th class="Th1">
+        <th>
             @Html.DisplayNameFor(model => model.Precio)
         </th>
-        <th class="Th1">
+        <th>
             @Html.DisplayNameFor(model => model.Medida)
         </th>
-        <th class="Th1">
+        <th>
             @Html.DisplayNameFor(model => model.Serie)
         </th>
-        <th class="Th1">
+        <th>
             @Html.DisplayNameFor(model => model.Modelo)
         </th>
-        <th class="Th1">
+        <th>
             @Html.DisplayNameFor(model => model.Existencia)
         </th>
-        <th class="Th1">
+        <th>
             @Html.DisplayNameFor(model => model.UrlImagen)
         </th>
-        <th class="Th1">
+        <th>
             @Html.DisplayNameFor(model => model.Activo)
         </th>
 
@@ -43,34 +43,34 @@
 
 @foreach (var item in Model) {
 <tr>
-    <td class="Td1">
+    <td>
         @Html.DisplayFor(modelItem => item.Descripcion)
     </td>
-    <td class="Td1">
+    <td>
         @Html.DisplayFor(modelItem => item.Categoria.Descripcion)
     </td>
-    <td class="Td1">
+    <td>
         @Html.DisplayFor(modelItem => item.Precio)
     </td>
-    <td class="Td1">
+    <td>
         @Html.DisplayFor(modelItem => item.Medida)
     </td>
-    <td class="Td1">
+    <td>
         @Html.DisplayFor(modelItem => item.Serie)
     </td>
-    <td class="Td1">
+    <td>
         @Html.DisplayFor(modelItem => item.Modelo)
     </td>
-    <td class="Td1">
+    <td>
         @Html.DisplayFor(modelItem => item.Existencia)
     </td>
-    <td class="Td1">
+    <td>
         <img src="@item.UrlImagen" alt="@item.Descripcion" style="width:64px; height:auto;" />
     </td>
-    <td class="Td1">
+    <td>
         @Html.DisplayFor(modelItem => item.Activo)
     </td>
-    <td class="Td1">
+    <td>
         @Html.ActionLink("Editar", "Editar", new { id = item.Id }) |
         @Html.ActionLink("Detalle", "Detalle", new { id = item.Id }) |
         @Html.ActionLink("Eliminar", "Eliminar", new { id = item.Id })
