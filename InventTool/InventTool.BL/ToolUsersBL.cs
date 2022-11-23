@@ -20,7 +20,20 @@ namespace InventTool.BL
         public List<ToolUsers> ObtenerUsuarios()
         {
 
-            ListadeUsuarios = _contexto.ToolUsers.ToList();
+            ListadeUsuarios = _contexto.ToolUsers
+               .OrderBy(r => r.NombreUsuario)
+               .ToList();
+
+            return ListadeUsuarios;
+        }
+
+        public List<ToolUsers> ObtenerUsuariosActivos()
+        {
+
+            ListadeUsuarios = _contexto.ToolUsers
+                .Where(r => r.Activo == true)
+                .OrderBy(r => r.NombreUsuario)
+                .ToList();
 
             return ListadeUsuarios;
         }

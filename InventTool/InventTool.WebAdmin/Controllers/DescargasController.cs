@@ -26,7 +26,7 @@ namespace InventTool.WebAdmin.Controllers
         public ActionResult Crear()
         {
             var nuevaDescarga = new Descarga();
-            var toolUsers = _toolUsersBL.ObtenerUsuarios();
+            var toolUsers = _toolUsersBL.ObtenerUsuariosActivos();
 
             ViewBag.ToolUsersId = new SelectList(toolUsers, "Id", "NombreUsuario");
 
@@ -46,7 +46,7 @@ namespace InventTool.WebAdmin.Controllers
                 return RedirectToAction("Index");
             }
 
-            var toolUsers = _toolUsersBL.ObtenerUsuarios();
+            var toolUsers = _toolUsersBL.ObtenerUsuariosActivos();
 
             ViewBag.ToolUsersId = new SelectList(toolUsers, "Id", "NombreUsuario");
 
@@ -56,7 +56,7 @@ namespace InventTool.WebAdmin.Controllers
         public ActionResult Editar(int id)
         {
             var descarga = _descargasBL.ObtenerDescarga(id);
-            var toolUsers = _toolUsersBL.ObtenerUsuarios();
+            var toolUsers = _toolUsersBL.ObtenerUsuariosActivos();
 
             ViewBag.ToolUsersId = new SelectList(toolUsers, "Id", "NombreUsuario", descarga.ToolUsersId);
 
@@ -79,7 +79,7 @@ namespace InventTool.WebAdmin.Controllers
                 return RedirectToAction("Index");
             }
 
-            var toolUsers = _toolUsersBL.ObtenerUsuarios();
+            var toolUsers = _toolUsersBL.ObtenerUsuariosActivos();
 
             ViewBag.ToolUsersId = new SelectList(toolUsers, "Id", "NombreUsuario", descarga.ToolUsersId);
 

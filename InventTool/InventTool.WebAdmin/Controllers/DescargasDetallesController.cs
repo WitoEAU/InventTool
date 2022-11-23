@@ -34,7 +34,7 @@ namespace InventTool.WebAdmin.Controllers
             var nuevaDescargaDetalle = new DescargaDetalle();
             nuevaDescargaDetalle.DescargaId = id;
 
-            var herramental = _herramentalBL.ObtenerHerramental();
+            var herramental = _herramentalBL.ObtenerHerramentalActivos();
             ViewBag.herramentalId = new SelectList(herramental, "Id", "Descripcion");
 
 
@@ -56,7 +56,7 @@ namespace InventTool.WebAdmin.Controllers
                 return RedirectToAction("Index", new { id = descargaDetalle.DescargaId });
             }
             
-            var herramental = _herramentalBL.ObtenerHerramental();
+            var herramental = _herramentalBL.ObtenerHerramentalActivos();
             ViewBag.herramentalId = new SelectList(herramental, "Id", "Descripcion");
 
             return View(descargaDetalle);

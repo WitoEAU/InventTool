@@ -17,15 +17,28 @@ namespace InventTool.BL
             ListadeHerramental = new List<Herramental>();
         }
 
-
-
-        public List <Herramental> ObtenerHerramental()
+        public List<Herramental> ObtenerHerramental()
         {
 
             ListadeHerramental = _contexto.Herramental
                 .Include("Categoria")
+                .OrderBy(r => r.Categoria.Descripcion)
+                .ThenBy(r => r.Descripcion)
                 .ToList();
-            
+
+            return ListadeHerramental;
+        }
+
+
+        public List<Herramental> ObtenerHerramentalActivos()
+        {
+
+            ListadeHerramental = _contexto.Herramental
+                .Include("Categoria")
+                .Where(r => r.Activo == true)
+                .OrderBy(r => r.Descripcion)
+                .ToList();
+
             return ListadeHerramental;
         }
 

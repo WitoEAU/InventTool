@@ -59,6 +59,8 @@
     <Compile Include="Herramental.cs" />
     <Compile Include="HerramentalBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReporteDeInventarios.cs" />
+    <Compile Include="ReporteDeInventariosBL.cs" />
     <Compile Include="ToolUsers.cs" />
     <Compile Include="ToolUsersBL.cs" />
   </ItemGroup>

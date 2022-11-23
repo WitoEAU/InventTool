@@ -183,6 +183,7 @@
     <Content Include="Views\DescargasDetalles\Index.cshtml" />
     <Content Include="Views\DescargasDetalles\Crear.cshtml" />
     <Content Include="Views\DescargasDetalles\Eliminar.cshtml" />
+    <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
