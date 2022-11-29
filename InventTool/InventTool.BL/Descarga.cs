@@ -12,11 +12,24 @@ namespace InventTool.BL
         public int Id { get; set; }
         public int ToolUsersId { get; set; }
         public ToolUsers ToolUsers { get; set; }
+
+
+        //public int HerramentalId { get; set; }
+        public Herramental Herramental { get; set; }
         public DateTime Fecha { get; set; }
         public bool Activo { get; set; }
 
+        //public int CategoriaId { get; set; }
+        public Categoria Categoria { get; set; }
+
         public List<DescargaDetalle> ListadeDescargaDetalle { get; set; }
         public double Total { get; internal set; }
+
+        public string Descripcion { get; set; }
+        public double Medida { get; set; }
+
+
+
 
         public Descarga()
         {
@@ -24,6 +37,7 @@ namespace InventTool.BL
             Fecha = DateTime.Now;
 
             ListadeDescargaDetalle = new List<DescargaDetalle>();
+            
         }
     }
 
@@ -32,13 +46,29 @@ namespace InventTool.BL
         public int Id { get; set; }
         public int DescargaId { get; set; }
         public Descarga Descarga { get; set; }
-
         public int HerramentalId { get; set; }
         public Herramental Herramental { get; set; }
-         
+        //public int CategoriaId { get; set; }
+        public Categoria Categoria { get; set; }
         public int Cantidad { get; set; }
         public double Precio{ get; set; }
         public double Total { get; set; }
 
+        public string Descripcion { get; set; }
+        public double Medida { get; set; }
+
+
+        public List<DescargaDetalle> ListadeHerramentalDetalle { get; set; }
+
+        public DescargaDetalle()
+        {
+            
+            ListadeHerramentalDetalle = new List<DescargaDetalle>();
+
+        }
+
     }
+
+    
+
 }

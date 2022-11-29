@@ -75,10 +75,14 @@
     <td>
         @Html.ActionLink("Editar", "Editar", new { id = item.Id }) |
         @Html.ActionLink("Detalle", "Detalle", new { id = item.Id }) |
-        @Html.ActionLink("Eliminar", "Eliminar", new { id = item.Id })
+        @Html.ActionLink("Eliminar", "Eliminar", new { id = item.Id }) |
+        @Html.ActionLink("Mover", "Mover", new { id = item.Id })
     </td>
 
 </tr>
 }
 
 </table>
+<div>
+    @Html.ActionLink("Ir a Home", "Index", "Home")
+</div>

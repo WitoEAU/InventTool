@@ -11,6 +11,7 @@ namespace InventTool.WebAdmin.Controllers
     {
         DescargasBL _descargasBL;
         HerramentalBL _herramentalBL;
+        CategoriasBL _categoriasBL;
         
         
 
@@ -18,6 +19,7 @@ namespace InventTool.WebAdmin.Controllers
         {
             _descargasBL = new DescargasBL();
             _herramentalBL = new HerramentalBL();
+            _categoriasBL = new CategoriasBL();
         }
 
         // GET: DescargasDetalle
@@ -36,6 +38,16 @@ namespace InventTool.WebAdmin.Controllers
 
             var herramental = _herramentalBL.ObtenerHerramentalActivos();
             ViewBag.herramentalId = new SelectList(herramental, "Id", "Descripcion");
+
+            //NUEVO
+            var ListadeHerramentalDetalle = _descargasBL.ObtenerDescargaDetalle(id);
+            ViewBag.ListadeHerramentalDetalle = new SelectList(ListadeHerramentalDetalle, "Id", "Descripcion");
+
+            //var HerramentalDetalle = _herramentalBL.ObtenerHerramentalActivos();
+
+
+            //var categoria = _categoriasBL.ObtenerCategoria();
+            //ViewBag.ListadeCategorias = new SelectList(categoria, "Id", "Descripcion");
 
 
             return View(nuevaDescargaDetalle);
@@ -57,7 +69,14 @@ namespace InventTool.WebAdmin.Controllers
             }
             
             var herramental = _herramentalBL.ObtenerHerramentalActivos();
-            ViewBag.herramentalId = new SelectList(herramental, "Id", "Descripcion");
+            ViewBag.HerramentalId = new SelectList(herramental, "Id", "Descripcion");
+
+            var categoria = _categoriasBL.ObtenerCategoria();
+            ViewBag.CategoriaId = new SelectList(categoria, "Id", "Descripcion");
+
+            
+            //var categoria = _categoriasBL.ObtenerCategoria();
+            //ViewBag.ListadeCategorias = new SelectList(categoria, "Id", "Descripcion");
 
             return View(descargaDetalle);
         }

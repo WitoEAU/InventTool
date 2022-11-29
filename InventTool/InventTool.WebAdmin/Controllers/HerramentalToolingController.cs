@@ -7,55 +7,55 @@ using System.Web.Mvc;
 
 namespace InventTool.WebAdmin.Controllers
 {
-    public class HerramentalController : Controller
+    public class HerramentalToolingController : Controller
     {
-        HerramentalBL _herramentalBL;
         HerramentalToolingBL _herramentalToolingBL;
+        HerramentalBL _herramentalBL;
         CategoriasBL _categoriasBL;
 
-        public HerramentalController()
+        public HerramentalToolingController()
         {
-            _herramentalBL = new HerramentalBL();
             _herramentalToolingBL = new HerramentalToolingBL();
             _categoriasBL = new CategoriasBL();
+            _herramentalBL = new HerramentalBL();
         }
 
-        // GET: Herramental
+        // GET: HerramentalTooling
         public ActionResult Index()
         {
-            
-            var listadeHerramental = _herramentalBL.ObtenerHerramental();
 
-            return View(listadeHerramental);
+            var listadeHerramentalTooling = _herramentalToolingBL.ObtenerHerramentalTooling();
+
+            return View(listadeHerramentalTooling);
         }
-        
+
         public ActionResult Crear()
         {
-            var nuevoHerramental = new Herramental();
+            var nuevoHerramentalTooling = new HerramentalTooling();
             var categorias = _categoriasBL.ObtenerCategoria();
 
             ViewBag.CategoriaId = new SelectList(categorias, "Id", "Descripcion");
 
-            return View(nuevoHerramental);
+            return View(nuevoHerramentalTooling);
         }
         [HttpPost]
-        public ActionResult Crear(Herramental herramental, HttpPostedFileBase imagen)
+        public ActionResult Crear(HerramentalTooling herramentalTooling, HttpPostedFileBase imagen)
         {
             if (ModelState.IsValid)
             {
-                if (herramental.CategoriaId == 0)
+                if (herramentalTooling.CategoriaId == 0)
                 {
                     ModelState.AddModelError("CategoriaId", "Seleccionar Categoria");
-                    return View(herramental);
+                    return View(herramentalTooling);
                 }
 
                 if (imagen != null)
                 {
-                    herramental.UrlImagen = GuardarImagen(imagen);
+                    herramentalTooling.UrlImagen = GuardarImagen(imagen);
 
-                }  
+                }
 
-                _herramentalBL.GuardarHerramental(herramental);
+                _herramentalToolingBL.GuardarHerramentalTooling(herramentalTooling);
                 return RedirectToAction("Index");
             }
 
@@ -63,36 +63,36 @@ namespace InventTool.WebAdmin.Controllers
 
             ViewBag.ListadeCategorias = new SelectList(categorias, "Id", "Descripcion");
 
-            return View(herramental);
+            return View(herramentalTooling);
         }
 
         public ActionResult Editar(int id)
         {
-            var herramental = _herramentalBL.ObtenerHerramental(id);
+            var herramentalTooling = _herramentalToolingBL.ObtenerHerramentalTooling(id);
             var categorias = _categoriasBL.ObtenerCategoria();
 
-            ViewBag.CategoriaId = new SelectList(categorias, "Id", "Descripcion", herramental.CategoriaId);
-            return View(herramental);
+            ViewBag.CategoriaId = new SelectList(categorias, "Id", "Descripcion", herramentalTooling.CategoriaId);
+            return View(herramentalTooling);
         }
-        
+
         [HttpPost]
-        public ActionResult Editar(Herramental herramental, HttpPostedFileBase imagen)
+        public ActionResult Editar(HerramentalTooling herramentalTooling, HttpPostedFileBase imagen)
         {
             if (ModelState.IsValid)
             {
-                if (herramental.CategoriaId == 0)
+                if (herramentalTooling.CategoriaId == 0)
                 {
                     ModelState.AddModelError("CategoriaId", "Seleccionar Categoria");
-                    return View(herramental);
+                    return View(herramentalTooling);
                 }
 
                 if (imagen != null)
                 {
-                    herramental.UrlImagen = GuardarImagen(imagen);
+                    herramentalTooling.UrlImagen = GuardarImagen(imagen);
 
                 }
 
-                _herramentalBL.GuardarHerramental(herramental);
+                _herramentalToolingBL.GuardarHerramentalTooling(herramentalTooling);
                 return RedirectToAction("Index");
             }
 
@@ -100,28 +100,28 @@ namespace InventTool.WebAdmin.Controllers
 
             ViewBag.ListadeCategorias = new SelectList(categorias, "Id", "Descripcion");
 
-            return View(herramental);
+            return View(herramentalTooling);
         }
 
         public ActionResult Detalle(int id)
         {
-            var herramental = _herramentalBL.ObtenerHerramental(id);
-            
-            return View(herramental);
+            var herramentalTooling = _herramentalToolingBL.ObtenerHerramentalTooling(id);
+
+            return View(herramentalTooling);
         }
 
 
         public ActionResult Eliminar(int id)
         {
-            var herramental = _herramentalBL.ObtenerHerramental(id);
-           
-            return View(herramental);
+            var herramentalTooling = _herramentalToolingBL.ObtenerHerramentalTooling(id);
+
+            return View(herramentalTooling);
         }
 
         [HttpPost]
-        public ActionResult Eliminar (Herramental herramental)
+        public ActionResult Eliminar(HerramentalTooling herramentalTooling)
         {
-            _herramentalBL.EliminarHerramental(herramental.Id);
+            _herramentalToolingBL.EliminarHerramentalTooling(herramentalTooling.Id);
             return RedirectToAction("Index");
         }
 
@@ -134,20 +134,23 @@ namespace InventTool.WebAdmin.Controllers
         }
 
 
+
         public ActionResult Mover(int id)
         {
-            var herramental = _herramentalBL.ObtenerHerramental(id);
-
+            var herramental = _herramentalToolingBL.ObtenerHerramentalTooling(id);
+            
             return View(herramental);
         }
 
         [HttpPost]
-        public ActionResult Mover(Herramental herramental)
+        public ActionResult Mover(HerramentalTooling herramentalTooling)
         {
-            _herramentalBL.MoverHerramental(herramental.Id);
-
+            _herramentalToolingBL.MoverHerramentalTooling(herramentalTooling.Id);
+            
             return RedirectToAction("Index");
         }
+
+     
 
 
     }

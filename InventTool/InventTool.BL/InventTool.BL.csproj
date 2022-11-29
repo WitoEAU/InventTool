@@ -58,6 +58,8 @@
     <Compile Include="DescargasBL.cs" />
     <Compile Include="Herramental.cs" />
     <Compile Include="HerramentalBL.cs" />
+    <Compile Include="HerramentalTooling.cs" />
+    <Compile Include="HerramentalToolingBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReporteDeInventarios.cs" />
     <Compile Include="ReporteDeInventariosBL.cs" />

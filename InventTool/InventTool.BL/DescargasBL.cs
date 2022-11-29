@@ -20,6 +20,7 @@ namespace InventTool.BL
         {
             ListadeDescargas = _contexto.Descarga
             .Include("ToolUsers")
+            .Include("Herramental")
             .ToList();
                 
             return ListadeDescargas;
@@ -29,6 +30,7 @@ namespace InventTool.BL
         {
             var listadeDescargasDetalle = _contexto.DescargaDetalle
                 .Include("Herramental")
+                .Include("Categoria")
                 .Where(d => d.DescargaId == descargaId).ToList();
 
             return listadeDescargasDetalle;
@@ -38,16 +40,20 @@ namespace InventTool.BL
         public DescargaDetalle ObtenerDescargaDetallePorId(int id)
         {
             var descargaDetalle = _contexto.DescargaDetalle
+                .Include("Categoria")
                 .Include("Herramental").FirstOrDefault(h => h.Id == id);
 
             return descargaDetalle;
         }
 
+
+       
         public Descarga ObtenerDescarga(int id)
         {
             var descarga = _contexto.Descarga
-            .Include("ToolUsers").FirstOrDefault(h => h.Id == id);
-            
+            .Include("ToolUsers")
+            .Include("Herramental").FirstOrDefault(h => h.Id == id);
+
 
             return descarga;
         }
@@ -61,6 +67,7 @@ namespace InventTool.BL
             {
                 var descargaExistente = _contexto.Descarga.Find(descarga.Id);
                 descargaExistente.ToolUsersId = descarga.ToolUsersId;
+               
                 descargaExistente.Activo = descarga.Activo;
             }
 
@@ -73,6 +80,8 @@ namespace InventTool.BL
             var herramental = _contexto.Herramental.Find(descargaDetalle.HerramentalId);
 
             descargaDetalle.Precio = herramental.Precio;
+            descargaDetalle.Descripcion = herramental.Descripcion;
+            descargaDetalle.Medida = herramental.Medida;
             descargaDetalle.Total = descargaDetalle.Cantidad * descargaDetalle.Precio;
             _contexto.DescargaDetalle.Add(descargaDetalle);
 

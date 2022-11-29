@@ -125,13 +125,13 @@
     <Compile Include="Controllers\DescargasController.cs" />
     <Compile Include="Controllers\DescargasDetallesController.cs" />
     <Compile Include="Controllers\HerramentalController.cs" />
+    <Compile Include="Controllers\HerramentalToolingController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ToolUsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="_toolusersBL\ObtenerToolUsers.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -184,6 +184,13 @@
     <Content Include="Views\DescargasDetalles\Crear.cshtml" />
     <Content Include="Views\DescargasDetalles\Eliminar.cshtml" />
     <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
+    <Content Include="Views\HerramentalTooling\Index.cshtml" />
+    <Content Include="Views\HerramentalTooling\Crear.cshtml" />
+    <Content Include="Views\HerramentalTooling\Editar.cshtml" />
+    <Content Include="Views\HerramentalTooling\Detalle.cshtml" />
+    <Content Include="Views\HerramentalTooling\Eliminar.cshtml" />
+    <Content Include="Views\HerramentalTooling\Mover.cshtml" />
+    <Content Include="Views\Herramental\Mover.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

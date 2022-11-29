@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace InventTool.BL
 {
-    public class Herramental
+    public class HerramentalTooling
     {
-
-        public Herramental()
+        public HerramentalTooling()
         {
             Activo = true;
-
+            
         }
+
         public int Id { get; set; }
 
         [Display(Name = "Descripción")]
@@ -38,6 +38,6 @@ namespace InventTool.BL
         public string UrlImagen { get; set; }
         public bool Activo { get; set; }
 
-     
+        
     }
 }

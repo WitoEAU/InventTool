@@ -20,27 +20,39 @@
         <th>
             @Html.DisplayNameFor(model => model.Activo)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Herramental)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Herramental.Medida)
+        </th>
         <th></th>
     </tr>
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ToolUsers.NombreUsuario)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Fecha)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Activo)
-            </td>
-            <td>
-                @Html.ActionLink("Editar", "Editar", new { id = item.Id }) |
-                @Html.ActionLink("Detalle", "Detalle", new { id = item.Id }) |
-                @Html.ActionLink("Ver Herramental", "Index", "DescargasDetalles", new { id = item.Id }, null)
-            </td>
-        </tr>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.ToolUsers.NombreUsuario)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Fecha)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Activo)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Herramental.Descripcion) 
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Herramental.Medida)
+    </td>
+    <td>
+        @Html.ActionLink("Editar", "Editar", new { id = item.Id }) |
+        @Html.ActionLink("Detalle", "Detalle", new { id = item.Id }) |
+        @Html.ActionLink("Ver Herramental", "Index", "DescargasDetalles", new { id = item.Id }, null)
+    </td>
+</tr>
     }
 
 </table>

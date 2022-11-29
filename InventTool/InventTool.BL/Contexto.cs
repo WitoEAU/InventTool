@@ -22,10 +22,13 @@ namespace InventTool.BL
 
 
         public DbSet<Herramental> Herramental { get; set; }
+        public DbSet<HerramentalTooling> HerramentalTooling { get; set; }
         public DbSet<Categoria> Categorias { get; set; }
         public DbSet<ToolUsers> ToolUsers { get; set; }
         public DbSet<Descarga> Descarga { get; set; } 
         public DbSet<DescargaDetalle> DescargaDetalle { get; set; }
+
+       
 
     }
 }

@@ -10,11 +10,13 @@ namespace InventTool.BL
     {
         Contexto _contexto;
         public List<Herramental> ListadeHerramental { get; set; }
+        public List<HerramentalTooling> ListadeHerramentalTooling { get; set; }
 
         public HerramentalBL()
         {
             _contexto = new Contexto();
             ListadeHerramental = new List<Herramental>();
+            ListadeHerramentalTooling = new List<HerramentalTooling>();
         }
 
         public List<Herramental> ObtenerHerramental()
@@ -79,6 +81,66 @@ namespace InventTool.BL
             var herramental = _contexto.Herramental.Find(id);
             _contexto.Herramental.Remove(herramental);
             _contexto.SaveChanges();
+
+            
+        }
+
+
+        public void MoverHerramental(int id)
+        {
+
+            //var herramental = _contexto.Herramental
+            //   .Include("Categoria").FirstOrDefault(h => h.Id == id);
+
+            var herramentalM = _contexto.Herramental.Find(id);
+
+
+            herramentalM.Descripcion = herramentalM.Descripcion;
+            herramentalM.CategoriaId = herramentalM.CategoriaId;
+            herramentalM.Precio = herramentalM.Precio;
+            herramentalM.Medida = herramentalM.Medida;
+            herramentalM.Serie = herramentalM.Serie;
+            herramentalM.Modelo = herramentalM.Modelo;
+            herramentalM.Existencia = herramentalM.Existencia;
+            herramentalM.Activo = herramentalM.Activo;
+            herramentalM.UrlImagen = herramentalM.UrlImagen;
+
+
+           
+
+
+            HerramentalTooling herramentalExistente = _contexto.HerramentalTooling
+                .Find(id);
+
+            herramentalExistente = new HerramentalTooling();
+            herramentalExistente.Descripcion = herramentalM.Descripcion;
+            herramentalExistente.CategoriaId = herramentalM.CategoriaId;
+            herramentalExistente.Precio = herramentalM.Precio;
+            herramentalExistente.Medida = herramentalM.Medida;
+            herramentalExistente.Serie = herramentalM.Serie;
+            herramentalExistente.Modelo = herramentalM.Modelo;
+            herramentalExistente.Existencia = herramentalM.Existencia;
+            herramentalExistente.Activo = herramentalM.Activo;
+            herramentalExistente.UrlImagen = herramentalM.UrlImagen;
+            _contexto.HerramentalTooling.Add(herramentalExistente);
+
+
+
+
+            _contexto.SaveChanges();
+
+
+
+            var herramentalS = _contexto.Herramental.Find(id);
+
+            _contexto.Herramental.Remove(herramentalS);
+
+
+
+            _contexto.SaveChanges();
+
+
+
         }
     }
 }
