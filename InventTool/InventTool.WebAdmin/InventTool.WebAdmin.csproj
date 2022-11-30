@@ -128,6 +128,7 @@
     <Compile Include="Controllers\HerramentalToolingController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ToolUsersController.cs" />
+    <Compile Include="Controllers\UbicacionController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -191,6 +192,11 @@
     <Content Include="Views\HerramentalTooling\Eliminar.cshtml" />
     <Content Include="Views\HerramentalTooling\Mover.cshtml" />
     <Content Include="Views\Herramental\Mover.cshtml" />
+    <Content Include="Views\Ubicacion\Index.cshtml" />
+    <Content Include="Views\Ubicacion\Crear.cshtml" />
+    <Content Include="Views\Ubicacion\Editar.cshtml" />
+    <Content Include="Views\Ubicacion\Detalle.cshtml" />
+    <Content Include="Views\Ubicacion\Eliminar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

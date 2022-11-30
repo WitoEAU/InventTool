@@ -27,8 +27,9 @@ namespace InventTool.BL
         public DbSet<ToolUsers> ToolUsers { get; set; }
         public DbSet<Descarga> Descarga { get; set; } 
         public DbSet<DescargaDetalle> DescargaDetalle { get; set; }
+        public DbSet<Ubicacion> Ubicaciones { get; set; }
 
-       
+
 
     }
 }

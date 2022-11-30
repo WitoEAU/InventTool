@@ -65,6 +65,8 @@
     <Compile Include="ReporteDeInventariosBL.cs" />
     <Compile Include="ToolUsers.cs" />
     <Compile Include="ToolUsersBL.cs" />
+    <Compile Include="Ubicacion.cs" />
+    <Compile Include="UbicacionesBL.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

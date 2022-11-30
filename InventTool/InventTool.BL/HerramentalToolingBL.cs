@@ -28,6 +28,7 @@ namespace InventTool.BL
 
             ListadeHerramentalTooling = _contexto.HerramentalTooling
                 .Include("Categoria")
+                .Include("Ubicacion")
                 .OrderBy(r => r.Categoria.Descripcion)
                 .ThenBy(r => r.Descripcion)
                 .ToList();
@@ -41,6 +42,7 @@ namespace InventTool.BL
 
             ListadeHerramentalTooling = _contexto.HerramentalTooling
                 .Include("Categoria")
+                .Include("Ubicacion")
                 .Where(r => r.Activo == true)
                 .OrderBy(r => r.Descripcion)
                 .ToList();
@@ -64,6 +66,7 @@ namespace InventTool.BL
                 herramentalExistente.Serie = herramental.Serie;
                 herramentalExistente.Modelo = herramental.Modelo;
                 herramentalExistente.Existencia = herramental.Existencia;
+                herramentalExistente.AreaId = herramental.AreaId;
                 herramentalExistente.Activo = herramental.Activo;
                 herramentalExistente.UrlImagen = herramental.UrlImagen;
 
@@ -76,7 +79,9 @@ namespace InventTool.BL
         public HerramentalTooling ObtenerHerramentalTooling(int id)
         {
             var herramental = _contexto.HerramentalTooling
-                .Include("Categoria").FirstOrDefault(p => p.Id == id);
+                .Include("Categoria")
+                .Include("Area")
+                .FirstOrDefault(p => p.Id == id);
             return herramental;
         }
 
@@ -103,6 +108,7 @@ namespace InventTool.BL
             herramentalM.Serie = herramentalM.Serie;
             herramentalM.Modelo = herramentalM.Modelo;
             herramentalM.Existencia = herramentalM.Existencia;
+            herramentalM.AreaId = herramentalM.AreaId;
             herramentalM.Activo = herramentalM.Activo;
             herramentalM.UrlImagen = herramentalM.UrlImagen;
 
@@ -121,6 +127,7 @@ namespace InventTool.BL
             herramentalExistenteT.Serie = herramentalM.Serie;
             herramentalExistenteT.Modelo = herramentalM.Modelo;
             herramentalExistenteT.Existencia = herramentalM.Existencia;
+            herramentalExistenteT.AreaId = herramentalM.AreaId;
             herramentalExistenteT.Activo = herramentalM.Activo;
             herramentalExistenteT.UrlImagen = herramentalM.UrlImagen;
             _contexto.Herramental.Add(herramentalExistenteT);

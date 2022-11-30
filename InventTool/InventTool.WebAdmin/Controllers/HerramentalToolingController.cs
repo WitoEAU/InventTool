@@ -11,13 +11,16 @@ namespace InventTool.WebAdmin.Controllers
     {
         HerramentalToolingBL _herramentalToolingBL;
         HerramentalBL _herramentalBL;
+        UbicacionesBL _ubicacionesBL;
         CategoriasBL _categoriasBL;
+        Contexto _contexto;
 
         public HerramentalToolingController()
         {
             _herramentalToolingBL = new HerramentalToolingBL();
             _categoriasBL = new CategoriasBL();
             _herramentalBL = new HerramentalBL();
+            _ubicacionesBL = new UbicacionesBL();
         }
 
         // GET: HerramentalTooling
@@ -33,8 +36,10 @@ namespace InventTool.WebAdmin.Controllers
         {
             var nuevoHerramentalTooling = new HerramentalTooling();
             var categorias = _categoriasBL.ObtenerCategoria();
+            var ubicaciones = _ubicacionesBL.ObtenerUbicacion();
 
             ViewBag.CategoriaId = new SelectList(categorias, "Id", "Descripcion");
+            ViewBag.AreaId = new SelectList(ubicaciones, "Id", "Area");
 
             return View(nuevoHerramentalTooling);
         }
@@ -60,9 +65,11 @@ namespace InventTool.WebAdmin.Controllers
             }
 
             var categorias = _categoriasBL.ObtenerCategoria();
+            var ubicaciones = _ubicacionesBL.ObtenerUbicacion();
 
             ViewBag.ListadeCategorias = new SelectList(categorias, "Id", "Descripcion");
-
+            ViewBag.AreaId = new SelectList(ubicaciones, "Id", "Area");
+            
             return View(herramentalTooling);
         }
 
@@ -70,8 +77,10 @@ namespace InventTool.WebAdmin.Controllers
         {
             var herramentalTooling = _herramentalToolingBL.ObtenerHerramentalTooling(id);
             var categorias = _categoriasBL.ObtenerCategoria();
+            var ubicaciones = _ubicacionesBL.ObtenerUbicacion();
 
             ViewBag.CategoriaId = new SelectList(categorias, "Id", "Descripcion", herramentalTooling.CategoriaId);
+            ViewBag.AreaId = new SelectList(ubicaciones, "Id", "Area", herramentalTooling.AreaId);
             return View(herramentalTooling);
         }
 
@@ -97,8 +106,10 @@ namespace InventTool.WebAdmin.Controllers
             }
 
             var categorias = _categoriasBL.ObtenerCategoria();
+            var ubicaciones = _ubicacionesBL.ObtenerUbicacion();
 
             ViewBag.ListadeCategorias = new SelectList(categorias, "Id", "Descripcion");
+            ViewBag.AreaId = new SelectList(ubicaciones, "Id", "Area");
 
             return View(herramentalTooling);
         }
