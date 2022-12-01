@@ -1,6 +1,11 @@
 ﻿using InventTool.BL;
 using System.Web.Mvc;
 
+
+
+
+
+
 namespace InventTool.WebAdmin.Controllers
 {
     public class CategoriasController : Controller
@@ -9,7 +14,7 @@ namespace InventTool.WebAdmin.Controllers
 
             public CategoriasController()
             {
-            _categoriasBL = new CategoriasBL();
+                _categoriasBL = new CategoriasBL();
             }
 
             // GET: Categorias

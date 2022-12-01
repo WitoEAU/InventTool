@@ -23,8 +23,8 @@ namespace InventTool.BL
         {
 
             ListadeHerramental = _contexto.Herramental
-                .Include("Categoria")
                 .Include("Ubicacion")
+                .Include("Categoria")
                 .OrderBy(r => r.Categoria.Descripcion)
                 .ThenBy(r => r.Descripcion)
                 .ToList();
@@ -37,8 +37,8 @@ namespace InventTool.BL
         {
 
             ListadeHerramental = _contexto.Herramental
-                .Include("Categoria")
                 .Include("Ubicacion")
+                .Include("Categoria")
                 .Where(r => r.Activo == true)
                 .OrderBy(r => r.Descripcion)
                 .ToList();
@@ -62,7 +62,7 @@ namespace InventTool.BL
                 herramentalExistente.Serie = herramental.Serie;
                 herramentalExistente.Modelo = herramental.Modelo;
                 herramentalExistente.Existencia = herramental.Existencia;
-                herramentalExistente.AreaId = herramental.AreaId;
+                herramentalExistente.UbicacionId = herramental.UbicacionId;
                 herramentalExistente.Activo = herramental.Activo;
                 herramentalExistente.UrlImagen = herramental.UrlImagen;
 
@@ -75,8 +75,8 @@ namespace InventTool.BL
         public Herramental ObtenerHerramental(int id)
         {
             var herramental = _contexto.Herramental
+                .Include("Ubicacion")
                 .Include("Categoria")
-                .Include("Area")
                 .FirstOrDefault(p => p.Id == id);
             return herramental;
         }
@@ -94,8 +94,7 @@ namespace InventTool.BL
         public void MoverHerramental(int id)
         {
 
-            //var herramental = _contexto.Herramental
-            //   .Include("Categoria").FirstOrDefault(h => h.Id == id);
+            
 
             var herramentalM = _contexto.Herramental.Find(id);
 
@@ -107,7 +106,7 @@ namespace InventTool.BL
             herramentalM.Serie = herramentalM.Serie;
             herramentalM.Modelo = herramentalM.Modelo;
             herramentalM.Existencia = herramentalM.Existencia;
-            herramentalM.AreaId = herramentalM.AreaId;
+            herramentalM.UbicacionId = herramentalM.UbicacionId;
             herramentalM.Activo = herramentalM.Activo;
             herramentalM.UrlImagen = herramentalM.UrlImagen;
 
@@ -126,7 +125,7 @@ namespace InventTool.BL
             herramentalExistente.Serie = herramentalM.Serie;
             herramentalExistente.Modelo = herramentalM.Modelo;
             herramentalExistente.Existencia = herramentalM.Existencia;
-            herramentalExistente.AreaId = herramentalM.AreaId;
+            herramentalExistente.UbicacionId = herramentalM.UbicacionId;
             herramentalExistente.Activo = herramentalM.Activo;
             herramentalExistente.UrlImagen = herramentalM.UrlImagen;
             _contexto.HerramentalTooling.Add(herramentalExistente);

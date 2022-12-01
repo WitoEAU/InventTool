@@ -13,7 +13,7 @@ namespace InventTool.WebAdmin.Controllers
         HerramentalBL _herramentalBL;
         UbicacionesBL _ubicacionesBL;
         CategoriasBL _categoriasBL;
-        Contexto _contexto;
+        
 
         public HerramentalToolingController()
         {
@@ -39,7 +39,7 @@ namespace InventTool.WebAdmin.Controllers
             var ubicaciones = _ubicacionesBL.ObtenerUbicacion();
 
             ViewBag.CategoriaId = new SelectList(categorias, "Id", "Descripcion");
-            ViewBag.AreaId = new SelectList(ubicaciones, "Id", "Area");
+            ViewBag.UbicacionId = new SelectList(ubicaciones, "Id", "Area");
 
             return View(nuevoHerramentalTooling);
         }
@@ -68,7 +68,7 @@ namespace InventTool.WebAdmin.Controllers
             var ubicaciones = _ubicacionesBL.ObtenerUbicacion();
 
             ViewBag.ListadeCategorias = new SelectList(categorias, "Id", "Descripcion");
-            ViewBag.AreaId = new SelectList(ubicaciones, "Id", "Area");
+            ViewBag.ListadeUbicaciones = new SelectList(ubicaciones, "Id", "Area");
             
             return View(herramentalTooling);
         }
@@ -80,7 +80,7 @@ namespace InventTool.WebAdmin.Controllers
             var ubicaciones = _ubicacionesBL.ObtenerUbicacion();
 
             ViewBag.CategoriaId = new SelectList(categorias, "Id", "Descripcion", herramentalTooling.CategoriaId);
-            ViewBag.AreaId = new SelectList(ubicaciones, "Id", "Area", herramentalTooling.AreaId);
+            ViewBag.UbicacionId = new SelectList(ubicaciones, "Id", "Area", herramentalTooling.UbicacionId);
             return View(herramentalTooling);
         }
 
@@ -109,7 +109,7 @@ namespace InventTool.WebAdmin.Controllers
             var ubicaciones = _ubicacionesBL.ObtenerUbicacion();
 
             ViewBag.ListadeCategorias = new SelectList(categorias, "Id", "Descripcion");
-            ViewBag.AreaId = new SelectList(ubicaciones, "Id", "Area");
+            ViewBag.ListadeUbicaciones = new SelectList(ubicaciones, "Id", "Area");
 
             return View(herramentalTooling);
         }

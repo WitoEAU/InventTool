@@ -16,7 +16,7 @@ namespace InventTool.WebAdmin.Controllers
         {
             _ubicacionesBL = new UbicacionesBL();
         }
-
+        // GET: Ubicaciones
         public ActionResult Index()
         {
 
@@ -35,8 +35,7 @@ namespace InventTool.WebAdmin.Controllers
         public ActionResult Crear(Ubicacion ubicacion)
         {
 
-            if (ModelState.IsValid)
-            {
+            if (ModelState.IsValid){
                 if (ubicacion.Area != ubicacion.Area.Trim())
                 {
                     ModelState.AddModelError("Area", "No dejar espacios al inicio, ni al final");
@@ -55,8 +54,8 @@ namespace InventTool.WebAdmin.Controllers
 
         public ActionResult Editar(int id)
         {
-            var herramental = _ubicacionesBL.ObtenerUbicacion(id);
-            return View(herramental);
+            var herramentalU = _ubicacionesBL.ObtenerUbicacion(id);
+            return View(herramentalU);
         }
 
         [HttpPost]
@@ -82,15 +81,15 @@ namespace InventTool.WebAdmin.Controllers
 
         public ActionResult Detalle(int id)
         {
-            var herramental = _ubicacionesBL.ObtenerUbicacion(id);
-            return View(herramental);
+            var herramentalU = _ubicacionesBL.ObtenerUbicacion(id);
+            return View(herramentalU);
         }
 
 
         public ActionResult Eliminar(int id)
         {
-            var herramental = _ubicacionesBL.ObtenerUbicacion(id);
-            return View(herramental);
+            var herramentalU = _ubicacionesBL.ObtenerUbicacion(id);
+            return View(herramentalU);
         }
 
         [HttpPost]

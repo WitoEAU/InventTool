@@ -37,6 +37,20 @@ namespace InventTool.WebAdmin.Controllers
 
             if (ModelState.IsValid)
             {
+                if (toolUsers.NombreUsuario == null)
+                {
+                    ModelState.AddModelError("NombreUsuario", "Ingresar un Usuario");
+                    return View(toolUsers);
+                }
+
+                
+
+                _toolUsersBL.GuardarUsuarios(toolUsers);
+                return RedirectToAction("Index");
+            }
+
+            if (ModelState.IsValid)
+            {
                 if (toolUsers.NombreUsuario != toolUsers.NombreUsuario.Trim())
                 {
                     ModelState.AddModelError("Descripcion", "No dejar espacios al inicio, ni al final");

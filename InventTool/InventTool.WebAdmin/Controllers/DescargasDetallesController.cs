@@ -43,11 +43,7 @@ namespace InventTool.WebAdmin.Controllers
             var ListadeHerramentalDetalle = _descargasBL.ObtenerDescargaDetalle(id);
             ViewBag.ListadeHerramentalDetalle = new SelectList(ListadeHerramentalDetalle, "Id", "Descripcion");
 
-            //var HerramentalDetalle = _herramentalBL.ObtenerHerramentalActivos();
-
-
-            //var categoria = _categoriasBL.ObtenerCategoria();
-            //ViewBag.ListadeCategorias = new SelectList(categoria, "Id", "Descripcion");
+            
 
 
             return View(nuevaDescargaDetalle);
@@ -75,8 +71,7 @@ namespace InventTool.WebAdmin.Controllers
             ViewBag.CategoriaId = new SelectList(categoria, "Id", "Descripcion");
 
             
-            //var categoria = _categoriasBL.ObtenerCategoria();
-            //ViewBag.ListadeCategorias = new SelectList(categoria, "Id", "Descripcion");
+            
 
             return View(descargaDetalle);
         }

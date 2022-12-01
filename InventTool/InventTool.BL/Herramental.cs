@@ -37,7 +37,7 @@ namespace InventTool.BL
         [Display(Name = "Imagen")]
         public string UrlImagen { get; set; }
         public bool Activo { get; set; }
-        public int AreaId { get; set; }
+        public int UbicacionId { get; set; }
         public Ubicacion Ubicacion { get; set; }
 
 

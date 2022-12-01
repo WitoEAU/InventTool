@@ -19,13 +19,14 @@ namespace InventTool.WebAdmin.Controllers
             _toolUsersBL = new ToolUsersBL();
             _herramentalBL = new HerramentalBL();
         }
+
         // GET: Descargas
         public ActionResult Index()
         {
             
             var ListadeDescargas = _descargasBL.ObtenerDescargas();
           
-            //var ListadeDescargasDetalle = _descargasBL.ObtenerDescargaDetalle();
+            
 
             return View(ListadeDescargas);
 
@@ -40,7 +41,7 @@ namespace InventTool.WebAdmin.Controllers
             
 
             ViewBag.ToolUsersId = new SelectList(toolUsers, "Id", "NombreUsuario");
-            //ViewBag.HerramentalId = new SelectList(herramental, "Id", "Descripcion");
+            
 
             return View(nuevaDescarga);
         }
@@ -51,7 +52,8 @@ namespace InventTool.WebAdmin.Controllers
         public ActionResult Crear (Descarga descarga)
         {
             if (ModelState.IsValid)
-            {
+            {         
+
                 if (descarga.ToolUsersId == 0)
                 {
                     ModelState.AddModelError("ToolUsersId", "Seleccione un Usuario");
@@ -62,10 +64,10 @@ namespace InventTool.WebAdmin.Controllers
             }
 
             var toolUsers = _toolUsersBL.ObtenerUsuariosActivos();
-            //var herramental = _herramentalBL.ObtenerHerramentalActivos();
+            
 
             ViewBag.ToolUsersId = new SelectList(toolUsers, "Id", "NombreUsuario");
-            //ViewBag.HerramentalId = new SelectList(herramental, "Id", "Descripcion");
+            
 
             return View(descarga);
         }
@@ -74,10 +76,10 @@ namespace InventTool.WebAdmin.Controllers
         {
             var descarga = _descargasBL.ObtenerDescarga(id);
             var toolUsers = _toolUsersBL.ObtenerUsuariosActivos();
-            //var herramental = _herramentalBL.ObtenerHerramentalActivos();
+            
 
             ViewBag.ToolUsersId = new SelectList(toolUsers, "Id", "NombreUsuario", descarga.ToolUsersId);
-            //ViewBag.HerramentalId = new SelectList(herramental, "Id", "Descripcion", descarga.HerramentalId);
+           
 
             return View(descarga);
         }
@@ -99,10 +101,10 @@ namespace InventTool.WebAdmin.Controllers
             }
 
             var toolUsers = _toolUsersBL.ObtenerUsuariosActivos();
-            //var herramental = _herramentalBL.ObtenerHerramentalActivos();
+            
 
             ViewBag.ToolUsersId = new SelectList(toolUsers, "Id", "NombreUsuario", descarga.ToolUsersId);
-            //ViewBag.HerramentalId = new SelectList(herramental, "Id", "Descripcion", descarga.HerramentalId);
+            
 
             return View(descarga);
         }

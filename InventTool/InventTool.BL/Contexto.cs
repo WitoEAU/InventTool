@@ -20,7 +20,7 @@ namespace InventTool.BL
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }
 
-
+        //CODEFIRST
         public DbSet<Herramental> Herramental { get; set; }
         public DbSet<HerramentalTooling> HerramentalTooling { get; set; }
         public DbSet<Categoria> Categorias { get; set; }
