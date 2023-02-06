@@ -13,7 +13,15 @@ namespace InventTool.WebAdmin.Controllers
         HerramentalBL _herramentalBL;
         UbicacionesBL _ubicacionesBL;
         CategoriasBL _categoriasBL;
-        
+
+        public string draw = "";
+        public string start = "";
+        public string length = "";
+        public string sortColumn = "";
+        public string sortColumnDir = "";
+        public string searchValue = "";
+        public int pageSize, skip, recordsTotal;
+
 
         public HerramentalToolingController()
         {
@@ -30,6 +38,17 @@ namespace InventTool.WebAdmin.Controllers
             var listadeHerramentalTooling = _herramentalToolingBL.ObtenerHerramentalTooling();
 
             return View(listadeHerramentalTooling);
+        }
+
+
+        [HttpGet]
+        public JsonResult getProjectManagers()
+        {
+            using (Contexto dc = new Contexto())
+            {
+                var herramental = dc.Herramental.OrderBy(a => a.Descripcion).ToList();
+                return Json(new { data = herramental  }, JsonRequestBehavior.AllowGet);
+            }
         }
 
         public ActionResult Crear()

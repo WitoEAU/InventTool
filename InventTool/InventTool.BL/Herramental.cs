@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,12 +10,11 @@ namespace InventTool.BL
 {
     public class Herramental
     {
-
         public Herramental()
         {
             Activo = true;
-
         }
+        [Key]
         public int Id { get; set; }
 
         [Display(Name = "Descripción")]
@@ -31,6 +31,7 @@ namespace InventTool.BL
         public double Medida { get; set; }
         public string Serie { get; set; }
         public string Modelo { get; set; }
+
         public int CategoriaId { get; set; }
         public Categoria Categoria { get; set; }
 
@@ -39,8 +40,9 @@ namespace InventTool.BL
         public bool Activo { get; set; }
         public int UbicacionId { get; set; }
         public Ubicacion Ubicacion { get; set; }
-
+        public string Opciones { get; set; }
 
 
     }
+
 }

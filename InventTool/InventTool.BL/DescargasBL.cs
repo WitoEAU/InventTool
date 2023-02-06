@@ -10,10 +10,14 @@ namespace InventTool.BL
     {
         Contexto _contexto;
         public List<Descarga> ListadeDescargas { get; set; }
+        public List<Herramental> ListadeHerramental { get; set; }
+        public List<DescargaDetalle> ListadeDescargaDetalle { get; set; }
         public DescargasBL()
         {
             _contexto = new Contexto();
             ListadeDescargas = new List<Descarga>();
+            ListadeHerramental = new List<Herramental>();
+            ListadeDescargaDetalle = new List<DescargaDetalle>();
         }
 
         public List<Descarga> ObtenerDescargas()
@@ -31,7 +35,8 @@ namespace InventTool.BL
             var listadeDescargasDetalle = _contexto.DescargaDetalle
                 .Include("Herramental")
                 .Include("Categoria")
-                .Where(d => d.DescargaId == descargaId).ToList();
+                .Where(d => d.DescargaId == descargaId)
+                .ToList();
 
             return listadeDescargasDetalle;
         }
@@ -67,7 +72,8 @@ namespace InventTool.BL
             {
                 var descargaExistente = _contexto.Descarga.Find(descarga.Id);
                 descargaExistente.ToolUsersId = descarga.ToolUsersId;
-               
+                //descargaExistente.Herramental = descarga.Herramental;
+                //descargaExistente.CategoriaId = descarga.CategoriaId;
                 descargaExistente.Activo = descarga.Activo;
             }
 

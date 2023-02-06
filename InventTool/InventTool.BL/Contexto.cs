@@ -18,6 +18,9 @@ namespace InventTool.BL
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+            modelBuilder.Entity<Herramental>().MapToStoredProcedures();
+            modelBuilder.Entity<Herramental>().ToTable("tablaHerramental");
+
         }
 
         //CODEFIRST

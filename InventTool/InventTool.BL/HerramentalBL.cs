@@ -4,11 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace InventTool.BL
 {
     public class HerramentalBL
     {
         Contexto _contexto;
+        
+        
+       
         public List<Herramental> ListadeHerramental { get; set; }
         public List<HerramentalTooling> ListadeHerramentalTooling { get; set; }
 
@@ -22,6 +26,7 @@ namespace InventTool.BL
         public List<Herramental> ObtenerHerramental()
         {
 
+           
             ListadeHerramental = _contexto.Herramental
                 .Include("Ubicacion")
                 .Include("Categoria")
@@ -30,7 +35,24 @@ namespace InventTool.BL
                 .ToList();
 
             return ListadeHerramental;
+
+           
         }
+
+        public List<Herramental> GetList()
+        {
+           
+            ListadeHerramental = _contexto.Herramental
+                .Include("Ubicacion")
+                .Include("Categoria")
+                .OrderBy(r => r.Categoria.Descripcion)
+                .ThenBy(r => r.Descripcion)
+                .ToList();
+
+            return ListadeHerramental;
+
+        }
+
 
 
         public List<Herramental> ObtenerHerramentalActivos()
@@ -48,9 +70,11 @@ namespace InventTool.BL
 
         public void GuardarHerramental(Herramental herramental)
         {
-            if (herramental.Id == 0) 
-            { 
-                _contexto.Herramental.Add(herramental); 
+            if (herramental.Id == 0)
+            {
+                _contexto.Herramental.Add(herramental);
+                var CantHer = 0;
+                CantHer = CantHer + 1;
             }
             else
             {
@@ -65,10 +89,13 @@ namespace InventTool.BL
                 herramentalExistente.UbicacionId = herramental.UbicacionId;
                 herramentalExistente.Activo = herramental.Activo;
                 herramentalExistente.UrlImagen = herramental.UrlImagen;
+                
 
             }
             
             _contexto.SaveChanges();
+            
+
 
         }
 
@@ -109,9 +136,10 @@ namespace InventTool.BL
             herramentalM.UbicacionId = herramentalM.UbicacionId;
             herramentalM.Activo = herramentalM.Activo;
             herramentalM.UrlImagen = herramentalM.UrlImagen;
+            
 
 
-           
+
 
 
             HerramentalTooling herramentalExistente = _contexto.HerramentalTooling
@@ -128,9 +156,11 @@ namespace InventTool.BL
             herramentalExistente.UbicacionId = herramentalM.UbicacionId;
             herramentalExistente.Activo = herramentalM.Activo;
             herramentalExistente.UrlImagen = herramentalM.UrlImagen;
+           
             _contexto.HerramentalTooling.Add(herramentalExistente);
 
-
+            var CantHer = 0;
+            CantHer = CantHer - 1;
 
 
             _contexto.SaveChanges();
@@ -144,7 +174,7 @@ namespace InventTool.BL
 
 
             _contexto.SaveChanges();
-
+            
 
 
         }

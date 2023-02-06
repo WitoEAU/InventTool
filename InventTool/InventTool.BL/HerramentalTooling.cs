@@ -12,7 +12,7 @@ namespace InventTool.BL
         public HerramentalTooling()
         {
             Activo = true;
-            
+            Fecha = DateTime.Now;
         }
 
         public int Id { get; set; }
@@ -22,6 +22,7 @@ namespace InventTool.BL
         [MinLength(3, ErrorMessage = "Ingresar minimo 3 caracteres")]
         [MaxLength(20, ErrorMessage = "Ingresar maximo 20 caracteres")]
         public string Descripcion { get; set; }
+        public DateTime Fecha { get; set; }
 
         [Range(0, 1000, ErrorMessage = "Ingresar precio entre 0 y 1000")]
         public double Precio { get; set; }
@@ -39,7 +40,7 @@ namespace InventTool.BL
         public bool Activo { get; set; }
         public int UbicacionId { get; set; }
         public Ubicacion Ubicacion { get; set; }
-
+        public string Opciones { get; set; }
 
     }
 }
