@@ -89,7 +89,9 @@ namespace InventTool.BL
                 herramentalExistente.UbicacionId = herramental.UbicacionId;
                 herramentalExistente.Activo = herramental.Activo;
                 herramentalExistente.UrlImagen = herramental.UrlImagen;
-                
+                herramentalExistente.Observacion = herramental.Observacion;
+
+
 
             }
             
@@ -121,7 +123,7 @@ namespace InventTool.BL
         public void MoverHerramental(int id)
         {
 
-            
+
 
             var herramentalM = _contexto.Herramental.Find(id);
 
@@ -136,7 +138,8 @@ namespace InventTool.BL
             herramentalM.UbicacionId = herramentalM.UbicacionId;
             herramentalM.Activo = herramentalM.Activo;
             herramentalM.UrlImagen = herramentalM.UrlImagen;
-            
+            herramentalM.Observacion = herramentalM.Observacion;
+
 
 
 
@@ -156,11 +159,11 @@ namespace InventTool.BL
             herramentalExistente.UbicacionId = herramentalM.UbicacionId;
             herramentalExistente.Activo = herramentalM.Activo;
             herramentalExistente.UrlImagen = herramentalM.UrlImagen;
-           
+            herramentalExistente.Observacion = herramentalM.Observacion;
+
             _contexto.HerramentalTooling.Add(herramentalExistente);
 
-            var CantHer = 0;
-            CantHer = CantHer - 1;
+            
 
 
             _contexto.SaveChanges();

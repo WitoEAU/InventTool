@@ -69,7 +69,8 @@ namespace InventTool.BL
                 herramentalExistente.UbicacionId = herramental.UbicacionId;
                 herramentalExistente.Activo = herramental.Activo;
                 herramentalExistente.UrlImagen = herramental.UrlImagen;
-                
+                herramentalExistente.Observacion = herramental.Observacion;
+
 
             }
 
@@ -112,7 +113,7 @@ namespace InventTool.BL
             herramentalM.UbicacionId = herramentalM.UbicacionId;
             herramentalM.Activo = herramentalM.Activo;
             herramentalM.UrlImagen = herramentalM.UrlImagen;
-           
+            herramentalM.Observacion = herramentalM.Observacion;
 
 
 
@@ -132,7 +133,8 @@ namespace InventTool.BL
             herramentalExistenteT.UbicacionId = herramentalM.UbicacionId;
             herramentalExistenteT.Activo = herramentalM.Activo;
             herramentalExistenteT.UrlImagen = herramentalM.UrlImagen;
-           
+            herramentalExistenteT.Observacion = herramentalM.Observacion;
+
             _contexto.Herramental.Add(herramentalExistenteT);
            
 

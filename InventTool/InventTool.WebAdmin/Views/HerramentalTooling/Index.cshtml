@@ -4,17 +4,24 @@
     ViewBag.Title = "HerramentalTooling";
 }
 
-<h2>Outside Tooling</h2>
+<h2>Salidas Tooling</h2>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css"></script>
+
+<script type="text/javascript" src="https://cdn.datatables.net/1.13.2/css/dataTables.bulma.min.css"></script>
+
+<br />
 
 
-   
+@if (Model != null)
+{
 
-<table class="display table-striped dt-responsive stripe row-border compact" id="tablaHerramental2" >
+<table id="tablaHerramental2" class="display is-striped" style="width:100%">
     <thead>
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Descripcion)
-            </th>   
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.Categoria)
             </th>
@@ -22,8 +29,8 @@
                 @Html.DisplayNameFor(model => model.Fecha)
             </th>
             @*<th>
-                @Html.DisplayNameFor(model => model.Precio)
-            </th>*@
+                    @Html.DisplayNameFor(model => model.Precio)
+                </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.Medida)
             </th>
@@ -31,14 +38,14 @@
                 @Html.DisplayNameFor(model => model.Serie)
             </th>
             @*<th>
-                @Html.DisplayNameFor(model => model.Modelo)
-            </th>*@
+                    @Html.DisplayNameFor(model => model.Modelo)
+                </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.Existencia)
             </th>
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.Ubicacion)
-            </th>
+            </th>*@
             @*<th>
                     @Html.DisplayNameFor(model => model.UrlImagen)
                 </th>*@
@@ -46,13 +53,13 @@
                 @Html.DisplayNameFor(model => model.Activo)
             </th>
             <th>
-
+                Opciones
             </th>
 
         </tr>
     </thead>
 
-   
+
     <tbody>
         @foreach (var item in Model)
         {
@@ -67,8 +74,8 @@
                     @Html.DisplayFor(modelItem => item.Fecha)
                 </td>
                 @*<td>
-                    @Html.DisplayFor(modelItem => item.Precio)
-                </td>*@
+                        @Html.DisplayFor(modelItem => item.Precio)
+                    </td>*@
                 <td>
                     @Html.DisplayFor(modelItem => item.Medida)
                 </td>
@@ -76,17 +83,17 @@
                     @Html.DisplayFor(modelItem => item.Serie)
                 </td>
                 @*<td>
-                    @Html.DisplayFor(modelItem => item.Modelo)
-                </td>*@
+                        @Html.DisplayFor(modelItem => item.Modelo)
+                    </td>*@
                 <td>
                     @Html.DisplayFor(modelItem => item.Existencia)
                 </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Ubicacion.Area)
-                </td>
                 @*<td>
-                    <img src="@item.UrlImagen" alt="@item.Descripcion" style="width:64px; height:auto;" />
+                    @Html.DisplayFor(modelItem => item.Ubicacion.Area)
                 </td>*@
+                @*<td>
+                        <img src="@item.UrlImagen" alt="@item.Descripcion" style="width:64px; height:auto;" />
+                    </td>*@
                 <td>
                     @Html.DisplayFor(modelItem => item.Activo)
                 </td>
@@ -100,108 +107,107 @@
 
             </tr>
         }
-        </tbody>
-            
-
-    </table>
+    </tbody>
 
 
-<div>
-    @Html.ActionLink("Nuevo", "Crear")
-    @Html.ActionLink("Ir a Home", "Index", "Home")
-</div>
-
-<script type="text/javascript" src="https://cdn.datatables.net/v/dt/jq-3.6.0/dt-1.13.1/sb-1.4.0/sp-2.1.0/datatables.min.js"></script>
-
-
-@section scripts{
-
-    <script>
-
-        //document.addEventListener("DOMContentLoaded", function () {
-        //    $("#tablaHerramental").DataTable(
-        //    );
-        //});
-        //$(document).ready(function () {
-        //    $("#tablaHerramental").dataTable(
-
-
-        $(document).on("ready", function () { table(); });
-
-        var table = $('#tablaHerramental2').DataTable(
-            {
-
-
-                //"ajax":
-                //{
-                //    "url": "/Herramental/json",
-                //    "type": "Post",
-                //    "dataType": "json"
-                //},
-
-
-                //"pageLength": 10,
-                //"filter": true,
-                //"responsivePriority": 1,
-                //"data": null,
-
-                //"ajax": {
-                //    "url": "/HerramentalTooling/jsonResult",
-                //    "tye": "GET",
-                //    "datatype": "json",
-                //},
-
-                //"columns": [
-
-                //    { "data": "Descripcion", "name": "Descripcion", "autoWidth": true },
-                //    { "data": "CategoriaId", "name": "CategoriaId", "autoWidth": true },
-                //    { "data": "Precio", "name": "Precio", "autoWidth": true },
-                //    { "data": "Medida", "name": "Medida", "autoWidth": true },
-                //    { "data": "Serie", "name": "Serie", "autoWidth": true },
-                //    { "data": "Modelo", "name": "Modelo", "autoWidth": true },
-                //    { "data": "Existencia", "name": "Existencia", "autoWidth": true },
-                //    { "data": "UbicacionId", "name": "UbicacionId", "autoWidth": true },
-                //    { "data": "UrlImagen", "name": "UrlImagen", "autoWidth": true },
-                //    { "data": "Activo", "name": "Activo", "autoWidth": true },
-                //    { "data": "Opciones", "name": "Opciones", "autoWidth": true },
-
-                //],
-
-
-                //"Processing": true,
-                //"serverSide": true,
-
-                //"language": {
-                //    "sProcessing": "Procesando...",
-                //    "sLengthMenu": "Mostrar _MENU_ registros",
-                //    "sZeroRecords": "No se encontraron resulados",
-                //    "sEmptyTable": "Ningun dato disponible en esta tabla",
-                //    "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
-                //    "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
-                //    "sInfoFiltered": "(Filtrado de un total de _MAX_ registros)",
-                //    "sInfoPostFix": "",
-                //    "sSearch": "Buscar",
-                //    "sUrl": "",
-                //    "sInfoThousands": ",",
-                //    "sLoadingRecords": "Cargando...",
-                //    "oPaginate": {
-                //        "sFirst": "Primero",
-                //        "sLast": "Ultimo",
-                //        "sNext": "Siguiente",
-                //        "sPrevious": "Anterior"
-                //    },
-                //    "oAria": {
-                //        "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
-                //        "sSortDescending": ": Activar para ordenar la columna de manera descendente"
-
-                //    }
-
-                //}
-
-
-
-            });</script>
-
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.js"></script>
-
+</table>
 }
+
+    <div>
+        @Html.ActionLink("Nuevo", "Crear") |
+        @Html.ActionLink("Ir a Home", "Index", "Home")
+    </div>
+
+
+
+    @section scripts{
+
+        <script>
+
+            //document.addEventListener("DOMContentLoaded", function () {
+            //    $("#tablaHerramental").DataTable(
+            //    );
+            //});
+            //$(document).ready(function () {
+            //    $("#tablaHerramental").dataTable(
+
+
+            $(document).on("ready", function () { table(); });
+
+            var table = $('#tablaHerramental2').DataTable(
+                {
+
+
+                    //"ajax":
+                    //{
+                    //    "url": "/Herramental/json",
+                    //    "type": "Post",
+                    //    "dataType": "json"
+                    //},
+
+
+                    //"pageLength": 10,
+                    //"filter": true,
+                    //"responsivePriority": 1,
+                    //"data": null,
+
+                    //"ajax": {
+                    //    "url": "/HerramentalTooling/jsonResult",
+                    //    "tye": "GET",
+                    //    "datatype": "json",
+                    //},
+
+                    //"columns": [
+
+                    //    { "data": "Descripcion", "name": "Descripcion", "autoWidth": true },
+                    //    { "data": "CategoriaId", "name": "CategoriaId", "autoWidth": true },
+                    //    { "data": "Precio", "name": "Precio", "autoWidth": true },
+                    //    { "data": "Medida", "name": "Medida", "autoWidth": true },
+                    //    { "data": "Serie", "name": "Serie", "autoWidth": true },
+                    //    { "data": "Modelo", "name": "Modelo", "autoWidth": true },
+                    //    { "data": "Existencia", "name": "Existencia", "autoWidth": true },
+                    //    { "data": "UbicacionId", "name": "UbicacionId", "autoWidth": true },
+                    //    { "data": "UrlImagen", "name": "UrlImagen", "autoWidth": true },
+                    //    { "data": "Activo", "name": "Activo", "autoWidth": true },
+                    //    { "data": "Opciones", "name": "Opciones", "autoWidth": true },
+
+                    //],
+
+
+                    //"Processing": true,
+                    //"serverSide": true,
+
+                    "language": {
+                        "sProcessing": "Procesando...",
+                        "sLengthMenu": "Mostrar _MENU_ registros",
+                        "sZeroRecords": "No se encontraron resulados",
+                        "sEmptyTable": "Ningun dato disponible en esta tabla",
+                        "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                        "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+                        "sInfoFiltered": "(Filtrado de un total de _MAX_ registros)",
+                        "sInfoPostFix": "",
+                        "sSearch": "Buscar",
+                        "sUrl": "",
+                        "sInfoThousands": ",",
+                        "sLoadingRecords": "Cargando...",
+                        "oPaginate": {
+                            "sFirst": "Primero",
+                            "sLast": "Ultimo",
+                            "sNext": "Siguiente",
+                            "sPrevious": "Anterior"
+                        },
+                        "oAria": {
+                            "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+                            "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+
+                        }
+
+                        }
+
+
+
+                    });</script>
+
+        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.js"></script>
+
+    }

@@ -5,7 +5,7 @@
 }
 
 
-<h2>Herramental</h2>
+<h1></h1>
 
 @*@using (Html.BeginForm("Buscar", "Herramental", FormMethod.Post))
     {
@@ -15,9 +15,9 @@
         </div>
     }*@
 
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css"></script>
 
-
-<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.22/datatables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.13.2/css/dataTables.bulma.min.css"></script>
 
 <br />
 
@@ -26,99 +26,99 @@
 {
 
 
-<table id="tablaHerramental" class="display table-striped dt-responsive stripe row-border compact">
+    <table id="tablaHerramental" class="display is-striped" style="width:100%">
 
-    <thead>
-        <tr>
-            <th data-order='0'>
-                @Html.DisplayNameFor(model => model.Descripcion)
-            </th>
-            <th data-order='1'>
-                @Html.DisplayNameFor(model => model.Categoria)
-            </th>
-            @*<th data-order='2'>
-                    @Html.DisplayNameFor(model => model.Precio)
-                </th>*@
-            <th data-order='3'>
-                @Html.DisplayNameFor(model => model.Medida)
-            </th>
-            <th data-order='4'>
-                @Html.DisplayNameFor(model => model.Serie)
-            </th>
-            @*<th data-order='5'>
-                    @Html.DisplayNameFor(model => model.Modelo)
-                </th>*@
-            <th data-order='6'>
-                @Html.DisplayNameFor(model => model.Existencia)
-            </th>
-            <th data-order='7'>
-                @Html.DisplayNameFor(model => model.Ubicacion)
-            </th>
-            @*<th data-order='8'>
-                    @Html.DisplayNameFor(model => model.UrlImagen)
-                </th>*@
-            <th data-order='9'>
-                @Html.DisplayNameFor(model => model.Activo)
-            </th>
-            <th data-order='10'>
-                Opciones
-            </th>
-
-
-        </tr>
-
-
-    </thead>
-
-   
-    <tbody>
-        @foreach (var item in Model)
-        {
+        <thead>
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Descripcion)
+                <th data-order='0'>
+                    @Html.DisplayNameFor(model => model.Descripcion)
+                </th>
+                <th data-order='1'>
+                    @Html.DisplayNameFor(model => model.Categoria)
+                </th>
+                @*<th data-order='2'>
+                        @Html.DisplayNameFor(model => model.Precio)
+                    </th>*@
+                <th data-order='3'>
+                    @Html.DisplayNameFor(model => model.Medida)
+                </th>
+                <th data-order='4'>
+                    @Html.DisplayNameFor(model => model.Serie)
+                </th>
+                @*<th data-order='5'>
+                        @Html.DisplayNameFor(model => model.Modelo)
+                    </th>*@
+                <th data-order='6'>
+                    @Html.DisplayNameFor(model => model.Existencia)
+                </th>
+                <th data-order='7'>
+                    @Html.DisplayNameFor(model => model.Ubicacion)
+                </th>
+                @*<th data-order='8'>
+                        @Html.DisplayNameFor(model => model.UrlImagen)
+                    </th>*@
+                <th data-order='9'>
+                    @Html.DisplayNameFor(model => model.Activo)
+                </th>
+                <th data-order='10'>
+                    Opciones
+                </th>
 
-                <td>
-                    @Html.DisplayFor(modelItem => item.Categoria.Descripcion)
-                </td>
-                @*<td>
-                    @Html.DisplayFor(modelItem => item.Precio)
-                </td>*@
-                <td>
-                    @Html.DisplayFor(modelItem => item.Medida)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Serie)
-                </td>
-                @*<td>
-                    @Html.DisplayFor(modelItem => item.Modelo)
-                </td>*@
-                <td>
-                    @Html.DisplayFor(modelItem => item.Existencia)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Ubicacion.Area)
-                </td>
-                @*<td>
-                    <img src="@item.UrlImagen" alt="@item.Descripcion" style="width:64px; height:auto;" />
-                </td>*@
-                <td>
-                    @Html.DisplayFor(modelItem => item.Activo)
-                </td>
-                <td>
-                    @Html.ActionLink("Editar", "Editar", new { id = item.Id }) |
-                    @Html.ActionLink("Detalle", "Detalle", new { id = item.Id }) |
-                    @Html.ActionLink("Eliminar", "Eliminar", new { id = item.Id }) |
-                    @Html.ActionLink("Mover", "Mover", new { id = item.Id })
-                </td>
+
             </tr>
-        }
+
+
+        </thead>
+
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Descripcion)
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Categoria.Descripcion)
+                    </td>
+                    @*<td>
+                            @Html.DisplayFor(modelItem => item.Precio)
+                        </td>*@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Medida)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Serie)
+                    </td>
+                    @*<td>
+                            @Html.DisplayFor(modelItem => item.Modelo)
+                        </td>*@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Existencia)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Ubicacion.Area)
+                    </td>
+                    @*<td>
+                            <img src="@item.UrlImagen" alt="@item.Descripcion" style="width:64px; height:auto;" />
+                        </td>*@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Activo)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Editar", "Editar", new { id = item.Id }) |
+                        @Html.ActionLink("Detalle", "Detalle", new { id = item.Id }) |
+                        @Html.ActionLink("Eliminar", "Eliminar", new { id = item.Id }) |
+                        @Html.ActionLink("Mover", "Mover", new { id = item.Id })
+                    </td>
+                </tr>
+            }
         </tbody>
-        
 
-    
 
-</table>
+
+
+    </table>
 }
 
 <p>
@@ -129,7 +129,7 @@
     @Html.ActionLink("Ir a Home", "Index", "Home")
 </div>
 
-<script type="text/javascript" src="https://cdn.datatables.net/v/dt/jq-3.6.0/dt-1.13.1/sb-1.4.0/sp-2.1.0/datatables.min.js"></script>
+
 
 @section scripts{
 

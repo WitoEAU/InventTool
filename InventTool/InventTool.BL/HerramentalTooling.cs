@@ -41,6 +41,8 @@ namespace InventTool.BL
         public int UbicacionId { get; set; }
         public Ubicacion Ubicacion { get; set; }
         public string Opciones { get; set; }
+        public string Observacion { get; set; }
+
 
     }
 }
