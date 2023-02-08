@@ -7,7 +7,7 @@
 <h2>Eliminar</h2>
 
 <h3>Esta seguro que quiere eliminar este usuario?</h3>
-<div>
+<p>
     <h4>Usuarios</h4>
     <hr />
     <dl class="dl-horizontal">
@@ -41,8 +41,10 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Eliminar" class="btn btn-default" /> |
-            @Html.ActionLink("Regresar a la lista", "Index")
+            <input type="submit" value="Eliminar" class="btn btn-default btn-sm" , style="color: #3366BB;" />
         </div>
+        <p>
+            @Html.ActionLink("Regresar a la lista", "Index")
+        </p>
     }
-</div>
+

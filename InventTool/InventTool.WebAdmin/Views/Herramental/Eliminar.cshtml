@@ -6,9 +6,9 @@
 
 <h2></h2>
 
-<h3>&iquest; Seguro que quiere eliminar esto?</h3>
-<div>
-    <h4>Herramental</h4>
+<h3>Seguro que quiere eliminar este herramental?</h3>
+<p>
+    <h4></h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -104,9 +104,12 @@
     @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+        <br>
+        <p class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-default btn-sm" , style="color: #3366BB;" />
+        </p>
+        <p class="btn btn-default btn-sm" , style="color: #3366BB;">
             @Html.ActionLink("Regresar a la lista", "Index")
-        </div>
+        </p>
     }
-</div>
+

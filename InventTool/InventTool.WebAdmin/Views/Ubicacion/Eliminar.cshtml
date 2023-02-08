@@ -3,11 +3,11 @@
     ViewBag.Title = "Eliminar";
 }
 
-<h2>Eliminar</h2>
+<h2></h2>
 
-<h3>Esta seguro que quiere eliminar esta categoria?</h3>
-<div>
-    <h4>Ubicacion</h4>
+<b style="font-size: large"> ¿Esta seguro que quiere eliminar esta ubicacion?</b>
+<p>
+    <h4></h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -24,9 +24,12 @@
     {
         @Html.AntiForgeryToken()
 
+        <br >
+
         <div class="form-actions no-color">
-            <input type="submit" value="Eliminar" class="btn btn-default" /> |
-            @Html.ActionLink("Regresar a la lista", "Index")
+            <input type="submit" value="Eliminar" class="btn btn-default btn-sm" , style="color: #3366BB;" />
         </div>
+        <p class="btn btn-default btn-sm" , style="color: #3366BB;" >
+            @Html.ActionLink("Regresar a la lista", "Index")
+        </p>
     }
-</div>

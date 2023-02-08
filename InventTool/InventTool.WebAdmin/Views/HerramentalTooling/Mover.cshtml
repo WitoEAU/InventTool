@@ -7,9 +7,9 @@
 
 <h2></h2>
 
-<h3>&iquest; Seguro que quiere Mover esto?</h3>
+<h3>¿Seguro que quiere mover este herramental al invetario de Herramental?</h3>
 <div>
-    <h4>HerramentalTooling</h4>
+    <h4></h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -102,8 +102,10 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Mover" class="btn btn-default" /> |
-            @Html.ActionLink("Regresar a la lista", "Index")
+            <input type="submit" value="Mover" class="btn btn-default btn-sm" , style="color: #3366BB;" />
         </div>
-    }
-</div>
+        <p class="btn btn-default btn-sm" , style="color: #3366BB;">
+            @Html.ActionLink("Regresar a la lista", "Index")
+        </p>
+}
+    </div>

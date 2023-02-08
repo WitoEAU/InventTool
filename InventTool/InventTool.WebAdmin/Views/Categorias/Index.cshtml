@@ -4,11 +4,10 @@
     ViewBag.Title = "Categorias";
 }
 
-<h2>Categorias</h2>
+ <b style="font-size  : 40px">Categorias</b>
+<br>
+<br>
 
-<p>
-    @Html.ActionLink("Nueva Categoria", "Crear")
-</p>
 <table class="table">
     <tr>
         <th>
@@ -23,11 +22,15 @@
             @Html.DisplayFor(modelItem => item.Descripcion)
         </td>
         <td>
-            @Html.ActionLink("Editar", "Editar", new { id=item.Id }) |
-            @Html.ActionLink("Detalle", "Detalle", new { id=item.Id }) |
-            @Html.ActionLink("Eliminar", "Eliminar", new { id=item.Id })
+            @Html.ActionLink("Editar", "Editar", new { id = item.Id }, new { @class = "btn btn-info btn-sm", style = "color: white;" })
+            @Html.ActionLink("Detalle", "Detalle", new { id = item.Id }, new { @class = "btn btn-success btn-sm", style = "color: white;" })
+            @Html.ActionLink("Eliminar", "Eliminar", new { id = item.Id }, new { @class = "btn btn-danger btn-sm", style = "color: white;" })
         </td>
     </tr>
 }
 
 </table>
+
+<p class="btn btn-default btn-sm" , style="color: #3366BB;">
+    @Html.ActionLink("Nueva Categoria", "Crear")
+</p>

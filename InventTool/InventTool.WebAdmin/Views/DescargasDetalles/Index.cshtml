@@ -5,7 +5,10 @@
     ViewBag.Title = "Descargas Detalles";
 }
 
-<h2>Salida Herramental No: @Model.Id</h2>
+<b style="font-size  : 40px">Descarga detalle</b>
+<br>
+<br>
+<br>
 
 <p>
     @Html.ActionLink("Nuevo Herramental", "Crear", new { id = Model.Id })
@@ -31,23 +34,23 @@
 
     @foreach (var item in Model.ListadeDescargaDetalle)
     {
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.Herramental.Descripcion) 
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Herramental.Categoria.Descripcion)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Herramental.Medida)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Herramental.Serie)
-    </td>
-    <td>
-        @Html.ActionLink("Eliminar", "Eliminar", new { id = item.Id })
-    </td>
-</tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Herramental.Descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Herramental.Categoria.Descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Herramental.Medida)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Herramental.Serie)
+            </td>
+            <td>
+                @Html.ActionLink("Eliminar", "Eliminar", new { id = item.Id }, new { @class = "btn btn-danger btn-sm", style = "color: white;" })
+            </td>
+        </tr>
     }
 
 </table>

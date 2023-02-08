@@ -36,7 +36,9 @@
 
     </dl>
 </div>
+<p class="btn btn-default btn-sm" , style="color: white;">
+    @Html.ActionLink("Editar", "Editar", new { id = Model.Id })
+</p>
 <p>
-    @Html.ActionLink("Editar", "Editar", new { id = Model.Id }) |
     @Html.ActionLink("Regresar a la lista", "Index")
 </p>

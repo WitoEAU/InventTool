@@ -4,8 +4,9 @@
     ViewBag.Title = "Herramental";
 }
 
+<b style="font-size: 40px; text-align:center">Herramental</b>
+<br>
 
-<h1></h1>
 
 @*@using (Html.BeginForm("Buscar", "Herramental", FormMethod.Post))
     {
@@ -26,7 +27,7 @@
 {
 
 
-    <table id="tablaHerramental" class="display is-striped" style="width:100%">
+    <table id="tablaHerramental" class="displa is-striped" style="width:100%">
 
         <thead>
             <tr>
@@ -106,10 +107,10 @@
                         @Html.DisplayFor(modelItem => item.Activo)
                     </td>
                     <td>
-                        @Html.ActionLink("Editar", "Editar", new { id = item.Id }) |
-                        @Html.ActionLink("Detalle", "Detalle", new { id = item.Id }) |
-                        @Html.ActionLink("Eliminar", "Eliminar", new { id = item.Id }) |
-                        @Html.ActionLink("Mover", "Mover", new { id = item.Id })
+                        @Html.ActionLink("Editar", "Editar", new { id = item.Id }, new { @class = "btn btn-info btn-sm", style = "color: white;" })
+                        @Html.ActionLink("Detalle", "Detalle", new { id = item.Id }, new { @class = "btn btn-success btn-sm", style = "color: white;" })
+                        @Html.ActionLink("Eliminar", "Eliminar", new { id = item.Id }, new { @class = "btn btn-danger btn-sm", style = "color: white;" })
+                        @Html.ActionLink("Mover", "Mover", new { id = item.Id }, new { @class = "btn btn-warning btn-sm", style = "color: white;" })
                     </td>
                 </tr>
             }
@@ -124,10 +125,14 @@
 <p>
 </p>
 
-<div>
-    @Html.ActionLink("Nuevo Herramental", "Crear") |
-    @Html.ActionLink("Ir a Home", "Index", "Home")
-</div>
+
+
+<p class="btn btn-default btn-sm" , style="color: #3366BB;">
+    @Html.ActionLink("Nuevo Herramental", "Crear")
+</p>
+<p class="btn btn-default btn-sm" , style="color: #3366BB;">
+    @Html.ActionLink("Ir a Inicio", "Index", "Home")
+</p>
 
 
 
