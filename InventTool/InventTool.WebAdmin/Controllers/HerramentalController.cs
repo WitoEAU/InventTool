@@ -145,7 +145,7 @@ namespace InventTool.WebAdmin.Controllers
 
             List<BL.Herramental> herramental = _herramentalBL.GetList();
 
-            var herList = _herramentalBL.GetList();
+            
             var datos = _herramentalBL.ListadeHerramental;
             ViewBag.herramental = new SelectList(herramental);
 
