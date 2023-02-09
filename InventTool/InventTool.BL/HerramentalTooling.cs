@@ -22,8 +22,9 @@ namespace InventTool.BL
         [MinLength(3, ErrorMessage = "Ingresar minimo 3 caracteres")]
         [MaxLength(20, ErrorMessage = "Ingresar maximo 20 caracteres")]
         public string Descripcion { get; set; }
+        [DataType(DataType.Date)]
         public DateTime Fecha { get; set; }
-
+     
         [Range(0, 1000, ErrorMessage = "Ingresar precio entre 0 y 1000")]
         public double Precio { get; set; }
 
